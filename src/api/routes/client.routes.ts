@@ -1,15 +1,16 @@
 import { Router } from 'express';
+import { clientsController } from '../../app/controllers';
 
 const clientRoute = Router();
 
 // get
 clientRoute.get('/', async (req, res) => {
-    res.send(req);
+    const result = await clientsController.list();
+    res.status(200).json(result)
 });
 
 // List
 clientRoute.get('/:id', async (req, res) => {
-    res.send(req);
 });
 
 // add

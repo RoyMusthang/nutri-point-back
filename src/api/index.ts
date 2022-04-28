@@ -1,4 +1,5 @@
 import express from 'express';
+import { clientRoute } from './routes/client.routes';
 
 const api = express();
 
@@ -9,6 +10,7 @@ api.use(express.urlencoded({ extended: true }));
 
 // routes
 api.get('/', (_, res) => res.send('Roy Musthang'));
+api.use(clientRoute)
 
 //middlewares de resposta
 
