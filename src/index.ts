@@ -1,7 +1,6 @@
 import api from './api';
+import vars from './vars';
 
-const PORT = process.env.PORT || 3001;
-
-api.listen(PORT, () => {
-  console.log(`running in port ${PORT}`);
+api.listen(vars.api.port, () => {
+  console.log(`running in port ${vars.api.port}`);
 });
