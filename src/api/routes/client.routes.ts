@@ -11,11 +11,15 @@ clientRoute.get('/', async (req, res) => {
 
 // List
 clientRoute.get('/:id', async (req, res) => {
+  const id: any = req.params;
+  const result = await clientsController.get(id);
+  res.status(200).json(result);
 });
 
 // add
 clientRoute.post('/', async (req, res) => {
-  res.send(req);
+  const result = await clientsController.add(req.body);
+  res.status(201).json(result);
 });
 
 // edit
