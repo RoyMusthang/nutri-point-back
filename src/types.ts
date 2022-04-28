@@ -8,6 +8,7 @@ export type Entity = Indexable & {
 };
 
 export type Client = Entity & {
+  id: string
   description: string
   useMedication: boolean
 };
