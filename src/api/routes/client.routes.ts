@@ -1,30 +1,30 @@
-import { Router } from "express"
+import { Router } from 'express';
 
-const clientRoute = Router()
+const clientRoute = Router();
 
 // get
 clientRoute.get('/', async (req, res) => {
-  res.send(req)
-})
+    res.send(req);
+});
 
 // List
 clientRoute.get('/:id', async (req, res) => {
-  res.send(req)
-})
+    res.send(req);
+});
 
 // add
 clientRoute.post('/', async (req, res) => {
-  res.send(req)
-})
+    res.send(req);
+});
 
 // edit
 clientRoute.put('/:id', async (req, res) => {
-  res.send(req)
-})
+    res.send(req);
+});
 
 // remove
 clientRoute.delete('/:id', async (req, res) => {
-  res.send(req)
-})
+    res.send(req);
+});
 
-export { clientRoute }
+export { clientRoute };

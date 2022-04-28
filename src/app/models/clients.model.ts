@@ -1,7 +1,7 @@
-import { Client } from "../../types";
+import { Client } from '../../types';
 
 export const clientsModel = {
-  async list(): Promise<Client[]> {
-    return
-  }
-}
+    async list(): Promise<Client[]> {
+        return;
+    }
+};
