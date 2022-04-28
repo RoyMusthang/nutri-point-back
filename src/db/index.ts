@@ -3,7 +3,7 @@ import vars from '../vars';
 import makeClient from './nutri.dao';
 
 const sequelize = new Sequelize(vars.db.url, {
-    dialect: 'mysql'
+  dialect: 'mysql'
 });
 
 export const clientsDAO = makeClient(sequelize);

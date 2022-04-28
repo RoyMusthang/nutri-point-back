@@ -1,5 +1,7 @@
 import express from 'express';
+import 'express-async-errors';
 import { clientRoute } from './routes/client.routes';
+import { corsMiddleware, errorHandler } from './routes/middlewares';
 
 const api = express();
 
@@ -7,10 +9,12 @@ const api = express();
 
 api.use(express.json());
 api.use(express.urlencoded({ extended: true }));
+api.use(corsMiddleware);
 
 // routes
 api.get('/', (_, res) => res.send('Roy Musthang'));
-api.use(clientRoute)
+api.use(clientRoute);
+api.use(errorHandler);
 
 //middlewares de resposta
 
