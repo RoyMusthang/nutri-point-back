@@ -3,12 +3,13 @@ export type Indexable = {
 };
 
 export type Entity = Indexable & {
-  createdAt: Date,
+  createdAt?: Date,
   updateAt?: Date,
 };
 
 export type Client = Entity & {
-  id: string
-  description: string
-  useMedication: boolean
+  description: string[],
+  useMedication: boolean,
 };
+
+export type AddClient = Omit<Client, keyof Entity>

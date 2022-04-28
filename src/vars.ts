@@ -9,6 +9,6 @@ export default {
     port: Number(env.PORT || 3001)
   },
   db: {
-    url: env.DB_URL || 'mysql://root:root@127.0.0.1:3306/todos'
+    url: env.DB_URL || 'mysql://root:root@127.0.0.1:3306/nutri'
   }
 };

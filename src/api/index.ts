@@ -12,8 +12,7 @@ api.use(express.urlencoded({ extended: true }));
 api.use(corsMiddleware);
 
 // routes
-api.get('/', (_, res) => res.send('Roy Musthang'));
-api.use(clientRoute);
+api.use('/', clientRoute);
 api.use(errorHandler);
 
 //middlewares de resposta

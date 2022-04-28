@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('nutris', {
+    await queryInterface.createTable('clients', {
       id: {
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
@@ -16,17 +16,9 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE(3)
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE(3)
-      }
     });
   },
   async down(queryInterface) {
-    await queryInterface.dropTable('nutris');
+    await queryInterface.dropTable('clients');
   }
 };

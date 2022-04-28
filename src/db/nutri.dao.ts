@@ -1,4 +1,5 @@
 import { Sequelize, DataTypes } from 'sequelize';
+/* eslint-disable */
 const { v4: uuidv4 } = require('uuid');
 
 const makeClient = (sequelize: Sequelize) => {
@@ -17,14 +18,6 @@ const makeClient = (sequelize: Sequelize) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE(3)
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE(3)
-    }
   }, {
     timestamps: false,
     tableName: 'clients'
