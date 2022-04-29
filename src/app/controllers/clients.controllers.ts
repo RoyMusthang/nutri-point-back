@@ -11,10 +11,5 @@ export const clientsController = {
   async add(body: unknown): Promise<void> {
     const data = await clientValidator.bodyAdd(body);
     await clientsService.add(data);
-  },
-
-  async get(params: string): Promise<Client> {
-    const result = await clientsController.get(params);
-    return result;
   }
 };

@@ -3,17 +3,15 @@ import { clientsController } from '../../app/controllers';
 
 const clientRoute = Router();
 
-// get
-clientRoute.get('/', async (req, res) => {
+// Lint
+clientRoute.get('/', async (_req, res) => {
   const result = await clientsController.list();
   res.status(200).json(result);
 });
 
-// List
+// get
 clientRoute.get('/:id', async (req, res) => {
-  const id: any = req.params;
-  const result = await clientsController.get(id);
-  res.status(200).json(result);
+  res.json(req);
 });
 
 // add

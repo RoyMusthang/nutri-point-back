@@ -10,10 +10,5 @@ export const clientsService = {
   async add(data: AddClient): Promise<void> {
     const id = await clientsModel.add(data);
     return id;
-  },
-
-  async get(id: Client['id']): Promise<Client> {
-    const client = await clientsModel.get(id);
-    return client;
   }
 };

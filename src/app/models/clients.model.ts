@@ -20,10 +20,5 @@ export const clientsModel = {
           idCreate: result.id,
         });
       }))
-  },
-
-  async get(id: Client['id']): Promise<Client> {
-    const result = await clientsDAO.findOne({ where: { id }, raw: true });
-    return result as unknown as Client;
   }
 };
