@@ -1,4 +1,4 @@
-import { clientsDAO } from '../../db';
+import { clientsDAO, goalsDAO } from '../../db';
 import { AddClient, Client } from '../../types';
 
 export const clientsModel = {
@@ -8,11 +8,18 @@ export const clientsModel = {
     // gambiarra de inferência de tipo coisa do próprio sequelize
   },
 
-  async add(data: AddClient): Promise<Client['id']> {
+  async add(data: AddClient): Promise<void> {
+    const { description, useMedication } = data;
     const result = await clientsDAO.create({
-      ...data,
+      useMedication,
     }) as any;
-    return result.id;
+    Promise.all(
+      description.map(async (e) => {
+        await goalsDAO.create({
+          goals: e,
+          idCreate: result.id,
+        });
+      }))
   },
 
   async get(id: Client['id']): Promise<Client> {

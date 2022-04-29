@@ -7,7 +7,7 @@ export const clientsService = {
     return result;
   },
 
-  async add(data: AddClient): Promise<Client['id']> {
+  async add(data: AddClient): Promise<void> {
     const id = await clientsModel.add(data);
     return id;
   },

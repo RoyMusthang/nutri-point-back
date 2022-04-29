@@ -8,11 +8,9 @@ export const clientsController = {
     return result;
   },
 
-  async add(body: unknown): Promise<Client> {
+  async add(body: unknown): Promise<void> {
     const data = await clientValidator.bodyAdd(body);
-    const id = await clientsService.add(data);
-    const result = await clientsService.get(id);
-    return result;
+    await clientsService.add(data);
   },
 
   async get(params: string): Promise<Client> {
