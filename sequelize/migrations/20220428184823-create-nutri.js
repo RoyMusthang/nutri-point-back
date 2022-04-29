@@ -8,10 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.UUID
       },
-      description: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       useMedication: {
         type: Sequelize.BOOLEAN,
         allowNull: false,

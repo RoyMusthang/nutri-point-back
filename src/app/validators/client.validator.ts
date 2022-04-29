@@ -5,7 +5,7 @@ import { runSchema } from './_validator';
 export const clientValidator = {
   async bodyAdd(value: unknown): Promise<AddClient> {
     const schema = Joi.object<AddClient>({
-      description: Joi.array(),
+      description: Joi.array().items(Joi.string().required()),
       useMedication: Joi.boolean().default(false)
     });
 

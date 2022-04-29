@@ -1,4 +1,5 @@
 import { Sequelize, DataTypes } from 'sequelize';
+import { goalsDAO } from '.'
 /* eslint-disable */
 const { v4: uuidv4 } = require('uuid');
 
@@ -10,10 +11,6 @@ const makeClient = (sequelize: Sequelize) => {
       primaryKey: true,
       type: DataTypes.UUID,
     },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     useMedication: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
@@ -23,6 +20,9 @@ const makeClient = (sequelize: Sequelize) => {
     tableName: 'clients'
   });
 
+  goalsDAO.belongsTo(model, { foreignKey: 'id', as: 'id' });
+
+  model.hasMany(goalsDAO, { foreignKey: 'idCreate', as: 'idCreate' });
   return model;
 };
 
